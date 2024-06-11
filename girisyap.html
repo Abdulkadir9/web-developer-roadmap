@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>| Giriş Yap</title>
+  </head>
+  <body>
+    <div class="whole-pages-div">
+      <div class="head">
+        <div class="navbar">
+          <ion-icon class="menu-i" name="menu"></ion-icon>
+          <a
+            href="./index.html"
+            style="user-select: none; text-decoration: none; color: white"
+          >
+            <h3>Learn to Code With Me</h3>
+          </a>
+          <div class="navs-ri"></div>
+        </div>
+        <div class="main">
+          <div class="mains-menu">
+            <a class="menus-link" href="./index.html">Anasayfa</a>
+            <a class="menus-link" href="./frontend.html">Front-End</a>
+            <a class="menus-link" href="./backend.html">Back-End</a>
+            <a class="menus-link" href="./sorucevap.html">Soru & Cevap</a>
+            <a class="menus-link" href="./html.html">HTML</a>
+            <a class="menus-link" href="./css.html">CSS</a>
+            <a class="menus-link" href="./javascript.html">JavaScript</a>
+            <a class="menus-link" href="./mssql.html">MsSQL</a>
+            <a class="menus-link" href="./frameworkler.html">Frameworkler</a>
+          </div>
+
+          <div class="main-content">
+            <div class="girisyap-div">
+              <h3>Giriş Yap</h3>
+              <div class="line"></div>
+              <input
+                class="inp inp-txt"
+                type="text"
+                placeholder="Kullanıcı Adı"
+                id="kullaniciadi"
+              />
+              <input
+                class="inp inp-txt"
+                type="password"
+                placeholder="Şifre"
+                id="sifre"
+              />
+              <input class="inp inp-btn" type="button" value="Giriş Yap" />
+              <p style="margin-top: 12px">
+                Hesabın yoksa <a href="./kaydol.html">kaydol</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footbar">created by Kadir</div>
+    </div>
+    <script src="./assets/code.js"></script>
+    <script>
+      var kullaniciadi = document.getElementById("kullaniciadi");
+      var sifre = document.getElementById("sifre");
+      var btn = document.querySelector(".inp-btn");
+      btn.addEventListener("click", () => {
+        giris();
+      });
+      window.addEventListener("keydown", (c) => {
+        if (c.keyCode == 13) {
+          giris();
+        }
+      });
+
+      const giris = () => {
+        var valsifre = localStorage
+          .getItem("kullanıcısifre")
+          .split("é")[1]
+          .substring(
+            0,
+            localStorage.getItem("kullanıcısifre").split("é")[1].length - 1
+          );
+
+        if (
+          kullaniciadi.value ==
+            localStorage.getItem("kullanıcısifre").split("é")[0].substring(1) &&
+          sifre.value == valsifre
+        ) {
+          localStorage.setItem("login", "true");
+          window.location.href = "./index.html";
+        } else {
+          alert("Kullanıcı adı veya Şifre yanlış.");
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>| Soru & Cevap</title>
+  </head>
+  <body>
+    <div class="whole-pages-div">
+      <div class="head">
+        <div class="navbar">
+          <ion-icon class="menu-i" name="menu"></ion-icon>
+          <a
+            href="./index.html"
+            style="user-select: none; text-decoration: none; color: white"
+          >
+            <h3>Learn to Code With Me</h3>
+          </a>
+          <div class="navs-ri"></div>
+        </div>
+        <div class="main">
+          <div class="mains-menu">
+            <a class="menus-link" href="./index.html">Anasayfa</a>
+            <a class="menus-link" href="./frontend.html">Front-End</a>
+            <a class="menus-link" href="./backend.html">Back-End</a>
+            <a class="menus-link" href="./sorucevap.html">Soru & Cevap</a>
+            <a class="menus-link" href="./html.html">HTML</a>
+            <a class="menus-link" href="./css.html">CSS</a>
+            <a class="menus-link" href="./javascript.html">JavaScript</a>
+            <a class="menus-link" href="./mssql.html">MsSQL</a>
+            <a class="menus-link" href="./frameworkler.html">Frameworkler</a>
+          </div>
+
+          <div class="main-content">
+            <div class="s-div">
+              <h2>Sorular</h2>
+              <button class="btn-soru">Soru Sor & Cevap Ver</button>
+            </div>
+            <div class="line" style="width: 100%"></div>
+            <div class="tum-sorular">
+              <div class="s-card">
+                <div class="scs-top">
+                  <img class="k-img" src="./assets/media/prf.jpg" />
+                  <p>Mehmetistan</p>
+                </div>
+                <br />
+                <p class="cs-title">NodeJs'de paket nasıl indirilir?</p>
+              </div>
+              <div class="s-card">
+                <div class="scs-top">
+                  <img class="k-img" src="./assets/media/prf.jpg" />
+                  <p>Kadir</p>
+                </div>
+                <br />
+                <p class="cs-title">C# migration hatası nasıl çözülürs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footbar">created by Kadir</div>
+    </div>
+    <div class="sorus-div">
+      <div class="sorus-iceri" style="display: flex; flex-direction: column">
+        <input
+          class="inp inp-txt"
+          type="text"
+          placeholder="Kullanıcı Adı"
+          id="kullaniciadi"
+        />
+        <input
+          class="inp inp-txt"
+          style="height: 60px; font-weight: 500"
+          type="text"
+          placeholder="Soru"
+          id="soru"
+        />
+        <input class="inp inp-btn" type="button" value="Sor" />
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+    <script src="./assets/code.js"></script>
+
+    <script>
+      var sorusDiv = document.querySelector(".sorus-div");
+      var faXmark = document.querySelector(".fa-xmark");
+      faXmark.addEventListener("click", () => {
+        sorusDiv.style.transform = "scale(0)";
+      });
+
+      var btnSoru = document.querySelector(".btn-soru");
+      btnSoru.addEventListener("click", () => {
+        if (localStorage.getItem("login") == "true") {
+          sorusDiv.style.transform = "scale(1)";
+        } else {
+          window.location.href = "./girisyap.html";
+        }
+      });
+
+      var kullanici = document.getElementById("kullaniciadi");
+      var soru = document.getElementById("soru");
+      var btnSor = document.querySelector(".inp-btn");
+
+      var tumSorular = document.querySelector(".tum-sorular");
+      btnSor.addEventListener("click", () => {
+        var k = kullanici.value;
+        var s = soru.value;
+
+        if (k != "" && s != "") {
+          var sCard = document.createElement("div");
+          sCard.classList.add("s-card");
+          var scsTop = document.createElement("div");
+          scsTop.classList.add("scs-top");
+          var img = document.createElement("img");
+          img.src = "./assets/media/prf.jpg";
+          img.classList.add("k-img");
+          var p = document.createElement("p");
+          p.innerHTML = k;
+          var pti = document.createElement("p");
+          pti.innerHTML = s;
+          pti.classList.add("cs-title");
+          var br = document.createElement("br");
+
+          scsTop.appendChild(img);
+          scsTop.appendChild(p);
+          sCard.appendChild(scsTop);
+          sCard.appendChild(br);
+          sCard.appendChild(pti);
+
+          tumSorular.appendChild(sCard);
+
+          sorusDiv.style.transform = "scale(0)";
+        }
+      });
+    </script>
+  </body>
+</html>

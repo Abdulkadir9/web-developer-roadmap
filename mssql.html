@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>| MsSQL</title>
+  </head>
+  <body>
+    <div class="whole-pages-div">
+      <div class="head">
+        <div class="navbar">
+          <ion-icon class="menu-i" name="menu"></ion-icon>
+          <a
+            href="./index.html"
+            style="user-select: none; text-decoration: none; color: white"
+          >
+            <h3>Learn to Code With Me</h3>
+          </a>
+          <div class="navs-ri"></div>
+        </div>
+        <div class="main">
+          <div class="mains-menu">
+            <a class="menus-link" href="./index.html">Anasayfa</a>
+            <a class="menus-link" href="./frontend.html">Front-End</a>
+            <a class="menus-link" href="./backend.html">Back-End</a>
+            <a class="menus-link" href="./sorucevap.html">Soru & Cevap</a>
+            <a class="menus-link" href="./html.html">HTML</a>
+            <a class="menus-link" href="./css.html">CSS</a>
+            <a class="menus-link" href="./javascript.html">JavaScript</a>
+            <a class="menus-link" href="./mssql.html">MsSQL</a>
+            <a class="menus-link" href="./frameworkler.html">Frameworkler</a>
+          </div>
+
+          <div class="main-content">
+            <div class="ms-t-co">
+              <h1>MsSQL Dersleri</h1>
+              <br />
+              <p>
+                MsSQL ilişkisel veritabanı yönetim sistemidir. SQL Server, büyük
+                ve karmaşık veritabanlarını depolamak, yönetmek, sorgulamak ve
+                işlemek için kullanılan bir yazılım ürünüdür. Veri depolama,
+                veri güvenliği, yedekleme, geri yükleme, veri entegrasyonu,
+                analiz ve raporlama gibi çeşitli veritabanı yönetimi işlevlerini
+                destekler.
+              </p>
+            </div>
+            <div class="line" style="width: 100%"></div>
+            <h2>MsSQL Nedir?</h2>
+            <br />
+            <p>
+              MsSQL'i anlamak için, öncelikle veritabanı ve SQL'i anlamamız
+              gerekiyor. Sırasıyla bunlara bir gözatalım.
+            </p>
+            <br />
+            <h2>Veritabanı (Database) Nedir?</h2>
+            <br />
+            <p>
+              Aslında fark etmeseniz bile her gün verilerle uğraşıyorsunuz..
+              Örneğin;
+            </p>
+            <br />
+            <ul style="margin-left: 20px">
+              <li>
+                Telefonunuzdan playlist'ten bir şarkı açıp dinlediğinizde,
+                playlist burada veritabanıdır.
+              </li>
+              <br />
+              <li>
+                Ya da bir fotoğraf çektiniz sosyal medya hesaplarınızda bunu
+                galeriden seçip paylaştınız. Galeriniz aslında bir
+                veritabanıdır.
+              </li>
+              <br />
+              <li>
+                Ya da bir alışveriş sitesinden ürünleri satın almak için
+                alışveriş sepetine attınız. Alışveriş sepeti bir veritabanıdır.
+              </li>
+            </ul>
+            <br />
+            <p>
+              Veribanları gördüğünüz gibi her yerde. Peki ama veritabanı nedir?
+              Aslında teknik tanıma göre, yapılandırılmış veri topluluğu
+              diyebiliriz. Bu yüzden yukarıdaki örnekleri verdik.
+            </p>
+            <br />
+            <p>
+              Doğası gereği veriler birbirleriyle ilişkilidir. (related) Örneğin
+              bir ürün, birden fazla etiketiyle birlikte bir kategoriye aittir.
+              Bu nedenle ilişkisel veritabanı tabirini kullanıyoruz.
+            </p>
+            <br />
+            <p>
+              İlişkisel veritabanlarında, tabloları kullanarak "ürünler,
+              kategoriler, etiketler" vb. verileri modelliyoruz. Tablolar ise
+              satır ve sütunlardan oluşuyor. Tıpkı excel'deki tablolar gibi
+              düşünün. Yatay olanlar satır, dikey olanlar ise sütun.
+            </p>
+            <br />
+            <p>
+              Bir tablo, başka bir tablo ile bire-bir ya da bire-çok şeklinde
+              ilişkili olabilir. Yani birbiriyle bağlantılı olabilir.
+            </p>
+            <br />
+            <p>
+              Yani verilerimizi yapılandırıp yeri geldiğinde daha kolay
+              erişebileceğimiz bir yapı haline getiriyoruz.
+            </p>
+            <div class="line" style="width: 100%"></div>
+            <h2>SQL - Veritabanı Dili</h2>
+            <br />
+            <p>
+              SQL uzun adıyla <strong>S</strong>tructured <strong>Q</strong>uery
+              <strong>L</strong>anguage, türkçesiyle "Yapılandırılmış Sorgu
+              Dili" anlamına gelmektedir. Veritabanına erişmek için kullanılan
+              standart dildir.
+            </p>
+            <br />
+            <p>SQL üç bölümden oluşur. Bunlar;</p>
+            <br />
+            <ul style="margin-left: 20px">
+              <li>
+                Tanımlama: Veritabanını ve nesnelerini tanımlamanıza yardımcı
+                olan tablolar, view'lar, trigger'lar, stored procedure'ler vb.
+                ifadeleri içerir.
+              </li>
+              <br />
+              <li>
+                İşleme: Verilerinizi güncellemek ve sorgulamak için ifadeler
+                içerir.
+              </li>
+              <br />
+              <li>
+                Kontrol: Bir kullanıcının veritabanında erişim izinlerini
+                sağlar.
+              </li>
+            </ul>
+            <br />
+            <p>
+              Sanırım artık Veritabanı ve SQL sizin için biraz daha anlamlı hale
+              geldi. Gelelim sıradaki soruya, herşey iyi güzelde bu MsSQL nedir?
+            </p>
+            <br />
+            <p>
+              SQL Server, Microsoft'un Windows işletim sistemi platformu
+              üzerinde çalışır. SQL Server, Transact-SQL (T-SQL) adında
+              Microsoft'a özgü bir SQL varyantını kullanır. Bu dilden
+              kullanıcılar veritabanına sorgular, işlemler ve depolama mantığı
+              ekleyebilirler. Ayrıca SQL Server, raporlama hizmetleri, analitik
+              servisler, entegrasyon hizmetleri gibi ek bileşenlerle de
+              genişletilebilir. Farklı sürümleri, farklı özellik ve kapasiteler
+              sunar. Örneğin, SQL Server Express sürümü ücretsizdir ve daha
+              küçük ölçekli projeler için uygundur, Enterprise sürümü büyük
+              kuruluşların karmaşık veritabanı gereksinimlerini karşılamak üzere
+              tasarlanmıştır. Microsoft SQL Server, geniş işlevselliği,
+              güvenliği ve ölçeklenebilirliği nedeniyle birçok işletme ve
+              kuruluş tarafından tercih edilen bir veritabanı yönetim
+              sistemidir.
+            </p>
+            <br />
+            <p style="font-size: 18px">
+              Daha detaylı eğitim videosu
+              <a
+                target="_blank"
+                href="https://www.youtube.com/watch?v=9ai0Rc-4LKY&list=PLKnjBHu2xXNP6Qa6u8GLawPnzo1brHZPP&index=2"
+              >
+                için
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footbar">created by Kadir</div>
+    </div>
+    <script src="./assets/code.js"></script>
+  </body>
+</html>
